@@ -40,6 +40,8 @@ Detection/
    - SGD optimizer (lr=0.001, momentum=0.9)
    - 30 epochs
    - 배치 사이즈: 6
+   
+   ![Train Evaluation](assets/output.png)
 
 4. **후처리**
    - Confidence threshold
