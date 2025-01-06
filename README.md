@@ -27,25 +27,31 @@ Detection/
 
 ## 주요 기능
 
-1. **데이터 전처리**
-   - 이미지 리사이징 (448x448)
-   - 데이터 정규화
-   - 바운딩 박스 좌표 변환
+1. **데이터셋 구축**
+   - Bus와 Truck 클래스에 대한 탐지 데이터셋
+   - COCO format 기반의 바운딩 박스 좌표계 사용
+   - Train/Val 분할
 
-2. **모델 아키텍처**
-   - Faster R-CNN with ResNet50 FPN backbone
-   - 2개 클래스 (Bus, Truck)
+2. **모델 구현**
+   - Faster R-CNN
+     - ResNet50 FPN backbone 사용
+     - Region Proposal Network (RPN)
+     - ROI Pooling
+   - YOLOv1
+     - Grid 기반 단일 스테이지 탐지기
+     - 격자당 2개의 바운딩 박스 예측
 
 3. **학습**
    - SGD optimizer (lr=0.001, momentum=0.9)
    - 30 epochs
    - 배치 사이즈: 6
-   
-   ![Train Evaluation](assets/output.png)
+
+   ![Training Results](assets/output.png)
 
 4. **후처리**
    - Confidence threshold
    - Non-maximum suppression (NMS)
+   - COCO metrics 기반 성능 평가
 
 5. **평가**
    - COCO evaluation metrics
