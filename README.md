@@ -18,12 +18,14 @@ pip install pycocotools
 ```
 
 ## 데이터셋 구조
+```
 Detection/
 ├── images/
 ├── train/
 ├── val/
 ├── df.csv
 └── val.json
+```
 
 ## 주요 기능
 
@@ -100,8 +102,3 @@ vid = cv2.VideoCapture(video_path)
 - AP @ IoU=0.75
 - AP for small/medium/large objects
 - Average Recall (AR) for different detection counts and object sizes
-
-## 라이센스
-
-This project is licensed under the MIT License - see the LICENSE file for details
-
